@@ -1,18 +1,32 @@
-import 'package:events_pay_pro/view/login_view.dart';
-import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+import 'package:events_pay_pro/view/splash.dart';
+import 'package:flutter/material.dart';
+import 'package:grock/grock.dart';
+
+import 'constant/constant.dart';
+
+void main() {
+  runApp( const MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
-  static const String _title = 'Event Pay';
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title,
-      home: LoginView(),
+      title: 'Bu Bilet',
+      
+      debugShowCheckedModeBanner: false,
+      navigatorKey: Grock.navigationKey,
+
+      theme: ThemeData(
+        scaffoldBackgroundColor: Constant.body,
+        primarySwatch: Colors.blue,
+      ),
+      home: const Splash()
     );
   }
 }
+
