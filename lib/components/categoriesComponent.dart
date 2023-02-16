@@ -14,11 +14,11 @@ class CategoryComponent extends StatelessWidget {
     return Card(
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Row(
           children: [
             Container(
-                margin: EdgeInsets.only(right: 5),
+                margin: const EdgeInsets.only(right: 5),
                 child: Image.asset(
                   category.image,
                   width: 30,
