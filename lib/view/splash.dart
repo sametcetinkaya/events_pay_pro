@@ -17,7 +17,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), (){
-      Grock.toRemove(Home());
+      Grock.toRemove(const Home());
     });
     super.initState();
   }

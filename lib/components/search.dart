@@ -22,6 +22,5 @@ class Search extends StatelessWidget {
 
         ),
       );
-      
   }
 }
