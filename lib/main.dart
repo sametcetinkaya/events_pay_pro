@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Bu Bilet',
-        debugShowCheckedModeBanner: false,
         navigatorKey: Grock.navigationKey,
         theme: ThemeData(
           scaffoldBackgroundColor: Constant.body,

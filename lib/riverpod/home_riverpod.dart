@@ -17,10 +17,10 @@ class HomeRiverpod extends ChangeNotifier{
   ]);
 
   Events eventsArray = Events(title: "İzmir Etkinlikleri" , events: [
-    Event(image: 'images/konser-69529.png', title: 'Büyük Ev Ablukada Akustik Konseri' , location: 'Ahmet Adnan Saygun Sanat Merkezi' , date: '22 Şabat Çar - 20:30' , price: 300 , isActive: true ),
-    Event(image: 'images/tiyatro-69756.png', title: 'Gülşen Konseri', location: 'İzmir Arena' , date: '11 Mart Cmt - 21:00' , price: 329 , isActive: true ),
-    Event(image: 'images/tiyatro-69756.png', title: 'Levent Yüksel Konseri', location: 'Ooze Venue' , date: '18 Şubat Cmt - 21:00' , price: 224 , isActive: true ),
-    Event(image: 'images/tiyatro-69756.png', title: "Notre Dame'ın Kamburu Müzikali", location: 'Bostanlı Suat Taşer Tiyatrosu' , date: '17 Şubat Cum - 20:30' , price: 200 , isActive: true ),
+    Event(image: 'images/buyuk-ev-ablukada-akustik-konseri-49150.png', title: 'Büyük Ev Ablukada Akustik Konseri' , location: 'Ahmet Adnan Saygun Sanat Merkezi' , date: '22 Şabat Çar - 20:30' , price: 300 , isActive: true ),
+    Event(image: 'images/gulsen-konseri-10248.jpg', title: 'Gülşen Konseri', location: 'İzmir Arena' , date: '11 Mart Cmt - 21:00' , price: 329 , isActive: true ),
+    Event(image: 'images/levent-yuksel-konseri-19924.jpg', title: 'Levent Yüksel Konseri', location: 'Ooze Venue' , date: '18 Şubat Cmt - 21:00' , price: 224 , isActive: true ),
+    Event(image: 'images/notre-damein-kamburu-muzikali-27328.jpeg', title: "Notre Dame'ın Kamburu Müzikali", location: 'Bostanlı Suat Taşer Tiyatrosu' , date: '17 Şubat Cum - 20:30' , price: 200 , isActive: true ),
     
   ]);
 
