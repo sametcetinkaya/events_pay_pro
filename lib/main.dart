@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Constant.body,
           primarySwatch: Colors.blue,
+          fontFamily: 'Montserrat'
         ),
         home: const Splash());
   }

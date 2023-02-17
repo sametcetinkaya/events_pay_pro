@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:events_pay_pro/components/gridCardComponent.dart';
+import 'package:events_pay_pro/components/listCardComponent.dart';
 import 'package:events_pay_pro/model/events.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,6 +26,10 @@ class Home extends ConsumerStatefulWidget {
 }
 
 class _HomeState extends ConsumerState<Home> {
+  bool _isShow = false;
+  bool _isChecked = true;
+
+  String filter = '';
   @override
   Widget build(BuildContext context) {
     final List<Map> myProducts =
@@ -43,11 +48,48 @@ class _HomeState extends ConsumerState<Home> {
           sliderContent(),
           searchContent(),
           categoryContent(read.categoryArray),
-          eventsContent(read.eventsArray)
+          eventsContent(read.eventsArray),
+          listEventContent(read.eventsArray)
         ],
       ),
       drawer: const DrawerComponent(),
     );
+  }
+
+  Visibility listEventContent(Events eventArray) {
+    return Visibility(
+            visible: _isShow,
+            child: Positioned(
+              bottom: 180,
+              right: 30,
+              child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.white,
+                  ),
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Tarihe Göre',
+                          style: TextStyle(
+                              color: Constant.text,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(height: 10),
+                        Text('Fiyata Göre',
+                            style: TextStyle(
+                                color: Constant.text,
+                                fontWeight: FontWeight.w500)),
+                        SizedBox(height: 10),
+                        Text('Kampyanlara',
+                            style: TextStyle(
+                                color: Constant.text,
+                                fontWeight: FontWeight.w500)),
+                      ])),
+            ));
   }
 
   Container eventsContent(Events eventArray) {
@@ -70,26 +112,51 @@ class _HomeState extends ConsumerState<Home> {
                           Row(
                             children: [
                               Container(
-                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15.0),
                                   color: Constant.white,
                                 ),
-                                child: const Icon(Icons.tune, size: 20),
+                                child: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      _isShow = !_isShow;
+                                    });
+                                  },
+                                  icon: const Icon(Icons.tune,
+                                      color: Constant.dark),
+                                ),
                               ),
                               Container(
                                 margin: const EdgeInsets.only(left: 5),
-                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15.0),
                                   color: Constant.white,
                                 ),
                                 child: Row(
-                                  children: const [
-                                    Icon(Icons.view_agenda,
-                                        color: Colors.grey, size: 20),
-                                    SizedBox(width: 5),
-                                    Icon(Icons.window, size: 20)
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          _isChecked = false;
+                                        });
+                                      },
+                                      icon: Icon(Icons.view_agenda,
+                                          color: _isChecked
+                                              ? Colors.grey
+                                              : Colors.black,
+                                          size: 20),
+                                    ),
+                                    IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            _isChecked = true;
+                                          });
+                                        },
+                                        icon: Icon(Icons.window,
+                                            color: _isChecked
+                                                ? Colors.black
+                                                : Colors.grey,
+                                            size: 20)),
                                   ],
                                 ),
                               )
@@ -102,23 +169,39 @@ class _HomeState extends ConsumerState<Home> {
             ),
           ),
           Flexible(
-              child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 250,
-                      childAspectRatio: .685,
-                      crossAxisSpacing: 20,
-                      mainAxisSpacing: 20),
-                  itemCount: eventArray.events.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        
-                      },
-                      child: GridCardComponent(
-                        event: eventArray.events[index],
-                      ),
-                    );
-                  })),
+            child: _isChecked
+                ? GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 250,
+                            childAspectRatio: .685,
+                            crossAxisSpacing: 20,
+                            mainAxisSpacing: 20),
+                    itemCount: eventArray.events.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {},
+                        child: GridCardComponent(
+                          event: eventArray.events[index],
+                        ),
+                      );
+                    })
+                : ListView.separated(
+                    separatorBuilder: (context, index) => const SizedBox(
+                      width: 8,
+                    ),
+                    itemCount: eventArray.events.length,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {},
+                        child: ListCardComponent(
+                          event: eventArray.events[index],
+                        ),
+                      );
+                    },
+                  ),
+          ),
         ],
       ),
     );

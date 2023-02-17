@@ -2,8 +2,8 @@ import 'package:events_pay_pro/components/custom_appbar.dart';
 import 'package:events_pay_pro/constant/constant.dart';
 import 'package:flutter/material.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class RegisterView extends StatelessWidget {
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,9 @@ class LoginView extends StatelessWidget {
                 child: Column(
                   children: const [
                     Text(
-                      "Giriş Yap",
+                      "Kayıt Ol",
                       style: TextStyle(color: Constant.text, fontSize: 18),
                     ),
-                    Text("Telefon numaranızı girin ve devam edin")
                   ],
                 ),
               ),

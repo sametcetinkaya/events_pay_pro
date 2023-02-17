@@ -3,6 +3,8 @@ import 'package:events_pay_pro/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../view/register.dart';
+
 class DrawerComponent extends StatelessWidget {
   const DrawerComponent({super.key});
 
@@ -26,11 +28,11 @@ class DrawerComponent extends StatelessWidget {
                   height: 30,
                 ),
                 IconButton(
-                  onPressed: (){
-                    Scaffold.of(context).closeDrawer();
-                  },
-                  icon: const Icon(Icons.close_rounded,color:Constant.green)
-                )
+                    onPressed: () {
+                      Scaffold.of(context).closeDrawer();
+                    },
+                    icon:
+                        const Icon(Icons.close_rounded, color: Constant.green))
               ],
             ),
           ),
@@ -42,9 +44,8 @@ class DrawerComponent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TextButton(
-                  onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginView())),
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const LoginView())),
                   child: Container(
                     height: 100,
                     width: 120,
@@ -59,58 +60,59 @@ class DrawerComponent extends StatelessWidget {
                             spreadRadius: 0.5,
                           )
                         ]),
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          
-                          Icon(
-                            Icons.person_add,
-                            color: Constant.text,
-                            size: 30,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Giriş Yap',
-                            style: TextStyle(color: Constant.text),
-                          )
-                        ],
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.person_add,
+                          color: Constant.text,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          'Giriş Yap',
+                          style: TextStyle(color: Constant.text),
+                        )
+                      ],
                     ),
                   ),
                 ),
-                Container(
-                  height: 100,
-                  width: 120,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.white,
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black26,
-                          blurRadius: 5.0,
-                          spreadRadius: 0.5,
+                TextButton(
+                   onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const RegisterView())),
+                  child: Container(
+                    height: 100,
+                    width: 120,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Colors.white,
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black26,
+                            blurRadius: 5.0,
+                            spreadRadius: 0.5,
+                          )
+                        ]),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.logout,
+                          color: Constant.text,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          'Üye Ol',
+                          style: TextStyle(color: Constant.text, fontSize: 15),
                         )
-                      ]),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(
-                        Icons.logout,
-                        color: Constant.text,
-                        size: 30,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        'Üye Ol',
-                        style: TextStyle(color: Constant.text, fontSize: 15),
-                      )
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
