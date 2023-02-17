@@ -51,8 +51,7 @@ class _HomeState extends ConsumerState<Home> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 260.0),
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: SingleChildScrollView(
-          child: Column(children: [
+      child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -91,23 +90,7 @@ class _HomeState extends ConsumerState<Home> {
             )
           ],
         ),
-        Container(
-          width: 300,
-          height: 600,
-          child: GridView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1,
-                  mainAxisSpacing: 20),
-              itemCount: eventsModel.events.length,
-              itemBuilder: (context, index) {
-                return GridCardComponent(
-                  event: eventsModel.events[index],
-                );
-              }),
-        ),
-      ])),
+      ]),
     );
   }
 
