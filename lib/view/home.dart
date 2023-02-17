@@ -27,6 +27,9 @@ class Home extends ConsumerStatefulWidget {
 class _HomeState extends ConsumerState<Home> {
   @override
   Widget build(BuildContext context) {
+    final List<Map> myProducts =
+        List.generate(1000, (index) => {"id": index, "name": 'product $index'})
+            .toList();
     var watch = ref.watch(homeriverpod);
     var read = ref.read(homeriverpod);
     return Scaffold(
@@ -40,57 +43,84 @@ class _HomeState extends ConsumerState<Home> {
           sliderContent(),
           searchContent(),
           categoryContent(read.categoryArray),
-          eventContent(read.eventsArray)
+          eventsContent(read.eventsArray)
         ],
       ),
       drawer: const DrawerComponent(),
     );
   }
 
-  Container eventContent(Events eventsModel) {
+  Container eventsContent(Events eventArray) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 260.0),
-      padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Column(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(eventsModel.title,
-                style: const TextStyle(color: Constant.dark)),
-            Row(
+      margin: const EdgeInsets.only(top: 250),
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(bottom: 15),
+            child: Column(
               children: [
                 Row(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: Constant.white,
-                      ),
-                      child: const Icon(Icons.tune, size: 20),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 5),
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15.0),
-                        color: Constant.white,
-                      ),
-                      child: Row(
-                        children: const [
-                          Icon(Icons.view_agenda, color: Colors.grey, size: 20),
-                          SizedBox(width: 5),
-                          Icon(Icons.window, size: 20)
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(eventArray.title,
+                          style: const TextStyle(color: Constant.dark)),
+                      Row(
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                  color: Constant.white,
+                                ),
+                                child: const Icon(Icons.tune, size: 20),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(left: 5),
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.0),
+                                  color: Constant.white,
+                                ),
+                                child: Row(
+                                  children: const [
+                                    Icon(Icons.view_agenda,
+                                        color: Colors.grey, size: 20),
+                                    SizedBox(width: 5),
+                                    Icon(Icons.window, size: 20)
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
                         ],
-                      ),
-                    )
-                  ],
-                ),
+                      )
+                    ])
               ],
-            )
-          ],
-        ),
-      ]),
+            ),
+          ),
+          Flexible(
+              child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 250,
+                      childAspectRatio: .685,
+                      crossAxisSpacing: 20,
+                      mainAxisSpacing: 20),
+                  itemCount: eventArray.events.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        
+                      },
+                      child: GridCardComponent(
+                        event: eventArray.events[index],
+                      ),
+                    );
+                  })),
+        ],
+      ),
     );
   }
 
