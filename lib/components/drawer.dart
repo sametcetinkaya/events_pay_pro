@@ -41,12 +41,8 @@ class DrawerComponent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                TextButton(
-                  onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginView())),
-                  child: Container(
-                    height: 100,
+                  Container(
+                    height: 120,
                     width: 120,
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
@@ -59,11 +55,13 @@ class DrawerComponent extends StatelessWidget {
                             spreadRadius: 0.5,
                           )
                         ]),
-                    child: Container(
-                      child: Column(
+                      child: TextButton(
+                  onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginView())),
+                  child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          
                           Icon(
                             Icons.person_add,
                             color: Constant.text,
@@ -74,15 +72,14 @@ class DrawerComponent extends StatelessWidget {
                           ),
                           Text(
                             'Giriş Yap',
-                            style: TextStyle(color: Constant.text),
+                            style: TextStyle(color: Constant.text, fontSize: 15),
                           )
                         ],
                       ),
-                    ),
                   ),
                 ),
                 Container(
-                  height: 100,
+                  height: 120,
                   width: 120,
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -95,7 +92,11 @@ class DrawerComponent extends StatelessWidget {
                           spreadRadius: 0.5,
                         )
                       ]),
-                  child: Column(
+                child:TextButton(
+                  onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginView())),
+                child:Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Icon(
@@ -112,7 +113,7 @@ class DrawerComponent extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
+                ),),
               ],
             ),
           ),
