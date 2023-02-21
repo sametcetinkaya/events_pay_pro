@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../constant/constant.dart';
 import '../model/event.dart';
 
@@ -45,14 +46,12 @@ class GridCardComponent extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 Flexible(
-                    child: Container(
-                  child: Text(
-                    event.location,
-                    style: const TextStyle(fontSize: 11, color: Constant.text),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                  ),
-                ))
+                    child: Text(
+                      event.location,
+                      style: const TextStyle(fontSize: 11, color: Constant.text),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ))
               ],
             ),
           ),

@@ -128,8 +128,7 @@ class LoginView extends StatelessWidget {
                         ),
                       ),                
                     ],
-                  ),
-                ),
+                  ),                ),
               ),
                 Container(
                 padding: const EdgeInsets.all(15),
@@ -165,7 +164,6 @@ class LoginView extends StatelessWidget {
                       ),
                     ],
                   ),),)
-      
             ],
         ),
       ),

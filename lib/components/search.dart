@@ -13,7 +13,7 @@ class Search extends StatelessWidget {
           filled: true,
           fillColor: Constant.white,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(24),
+            borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide.none
           ),
           hintText: "Etkinlik, sanatçı veya mekan arayın",

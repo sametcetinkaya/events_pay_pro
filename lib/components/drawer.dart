@@ -3,6 +3,8 @@ import 'package:events_pay_pro/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../view/register.dart';
+
 class DrawerComponent extends StatelessWidget {
   const DrawerComponent({super.key});
 
@@ -26,11 +28,11 @@ class DrawerComponent extends StatelessWidget {
                   height: 30,
                 ),
                 IconButton(
-                  onPressed: (){
-                    Scaffold.of(context).closeDrawer();
-                  },
-                  icon: const Icon(Icons.close_rounded,color:Constant.green)
-                )
+                    onPressed: () {
+                      Scaffold.of(context).closeDrawer();
+                    },
+                    icon:
+                        const Icon(Icons.close_rounded, color: Constant.green))
               ],
             ),
           ),
