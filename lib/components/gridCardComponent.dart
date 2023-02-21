@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grock/grock.dart';
-
 import '../constant/constant.dart';
 import '../model/event.dart';
 
