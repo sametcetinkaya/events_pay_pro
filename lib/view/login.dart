@@ -1,5 +1,6 @@
 import 'package:events_pay_pro/components/custom_appbar.dart';
 import 'package:events_pay_pro/constant/constant.dart';
+import 'package:events_pay_pro/view/register.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -151,7 +152,9 @@ class LoginView extends StatelessWidget {
                         height: 50,
                         width: 346,
                         child: ElevatedButton(                        
-                          onPressed: () {},
+                          onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const RegisterView())),
                           style: ElevatedButton.styleFrom(
                             shadowColor: Colors.transparent,
                             backgroundColor: Constant.dark,
