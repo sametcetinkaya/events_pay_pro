@@ -2,6 +2,8 @@ import 'package:events_pay_pro/components/custom_appbar.dart';
 import 'package:events_pay_pro/constant/constant.dart';
 import 'package:flutter/material.dart';
 
+import '../components/drawer.dart';
+
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
 
@@ -10,6 +12,7 @@ class RegisterView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Constant.body,
       appBar: CustomAppBar(),
+      drawer: const DrawerComponent(),
       body: SingleChildScrollView(
         reverse: true,
         child:Stack(

@@ -3,6 +3,8 @@ import 'package:events_pay_pro/constant/constant.dart';
 import 'package:events_pay_pro/view/register.dart';
 import 'package:flutter/material.dart';
 
+import '../components/drawer.dart';
+
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
 
@@ -11,6 +13,7 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Constant.body,
+      drawer: const DrawerComponent(),
       appBar: CustomAppBar(),
       body: SingleChildScrollView(
         reverse: true,
