@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constant/constant.dart';
+import '../view/location.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -26,7 +27,12 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
          },
       ),
       actions: [
-        IconButton(onPressed: () {}, icon: const Icon(Icons.location_on)),
+        IconButton(
+          onPressed: () => 
+          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LocationView())),
+                           icon: const Icon(Icons.location_on)),
       ],
       automaticallyImplyLeading: true,
     );

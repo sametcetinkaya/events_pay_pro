@@ -175,7 +175,7 @@ class _HomeState extends ConsumerState<Home> {
                     gridDelegate:
                         const SliverGridDelegateWithMaxCrossAxisExtent(
                             maxCrossAxisExtent: 250,
-                            childAspectRatio: .685,
+                            childAspectRatio: .660,
                             crossAxisSpacing: 20,
                             mainAxisSpacing: 20),
                     itemCount: eventArray.events.length,
