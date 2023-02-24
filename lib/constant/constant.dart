@@ -10,3 +10,4 @@ class Constant{
 
   static const Color secondText  = Color(0xff9d9d9d);
   static const Color greyLight  = Color(0xffe2e2e2);
+}
