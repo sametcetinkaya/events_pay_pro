@@ -4,6 +4,7 @@ class Event {
   String location;
   String date;
   int price;
+  String description;
   bool isActive;
 
   Event({
@@ -12,6 +13,7 @@ class Event {
     required this.location,
     required this.date,
     required this.price,
-    required this.isActive
+    required this.isActive,
+    required this.description
   });
 }

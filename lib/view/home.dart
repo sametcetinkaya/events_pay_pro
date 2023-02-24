@@ -3,6 +3,7 @@
 import 'package:events_pay_pro/components/gridCardComponent.dart';
 import 'package:events_pay_pro/components/listCardComponent.dart';
 import 'package:events_pay_pro/model/events.dart';
+import 'package:events_pay_pro/view/eventDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -180,7 +181,9 @@ class _HomeState extends ConsumerState<Home> {
                     itemCount: eventArray.events.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetail(eventData: eventArray.events[index])));
+                        },
                         child: GridCardComponent(
                           event: eventArray.events[index],
                         ),
