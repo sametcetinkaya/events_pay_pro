@@ -63,7 +63,7 @@ class _LocationViewState extends ConsumerState<LocationView> {
       decoration: const BoxDecoration(color: Constant.dark),
       margin: const EdgeInsets.only(top: 30.0),
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: const CitySearch(),
+      //child: const CitySearch(),
     );
   }
 }
