@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 
 class Search extends StatelessWidget {
-  const Search({super.key});
-
+  const Search({super.key,this.hintTitle});
+  final String? hintTitle;
   @override
   Widget build(BuildContext context) {
     return TextField( 
@@ -16,7 +16,7 @@ class Search extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide.none
           ),
-          hintText: "Etkinlik, sanatçı veya mekan arayın",
+          hintText: '$hintTitle',
           suffixIcon: const Icon(Icons.search),
           iconColor: Constant.text
 
