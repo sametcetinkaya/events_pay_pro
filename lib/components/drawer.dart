@@ -43,41 +43,42 @@ class DrawerComponent extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                  Container(
-                    height: 120,
-                    width: 120,
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.white,
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            blurRadius: 5.0,
-                            spreadRadius: 0.5,
-                          )
-                        ]),
-                      child: TextButton(
-                  onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginView())),
-                  child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(
-                            Icons.person_add,
-                            color: Constant.text,
-                            size: 30,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'Giriş Yap',
-                            style: TextStyle(color: Constant.text, fontSize: 15),
-                          )
-                        ],
-                      ),
+                Container(
+                  height: 120,
+                  width: 120,
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.0),
+                      color: Colors.white,
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 5.0,
+                          spreadRadius: 0.5,
+                        )
+                      ]),
+                  child: TextButton(
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginView())),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.person_add,
+                          color: Constant.text,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          'Giriş Yap',
+                          style: TextStyle(color: Constant.text, fontSize: 15),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Container(
@@ -94,28 +95,30 @@ class DrawerComponent extends StatelessWidget {
                           spreadRadius: 0.5,
                         )
                       ]),
-                child:TextButton(
-                  onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginView())),
-                child:Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(
-                        Icons.logout,
-                        color: Constant.text,
-                        size: 30,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        'Üye Ol',
-                        style: TextStyle(color: Constant.text, fontSize: 15),
-                      )
-                    ],
+                  child: TextButton(
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginView())),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.logout,
+                          color: Constant.text,
+                          size: 30,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          'Üye Ol',
+                          style: TextStyle(color: Constant.text, fontSize: 15),
+                        )
+                      ],
+                    ),
                   ),
-                ),),
+                ),
               ],
             ),
           ),

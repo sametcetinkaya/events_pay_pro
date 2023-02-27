@@ -59,42 +59,40 @@ class _HomeState extends ConsumerState<Home> {
 
   Visibility listEventContent(Events eventArray) {
     return Visibility(
-            visible: _isShow,
-            child: Positioned(
-              bottom: 180,
-              right: 30,
-              child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.white,
-                  ),
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Tarihe Göre',
-                          style: TextStyle(
-                              color: Constant.text,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        SizedBox(height: 10),
-                        Text('Fiyata Göre',
-                            style: TextStyle(
-                                color: Constant.text,
-                                fontWeight: FontWeight.w500)),
-                        SizedBox(height: 10),
-                        Text('Kampyanlara',
-                            style: TextStyle(
-                                color: Constant.text,
-                                fontWeight: FontWeight.w500)),
-                      ])),
-            ));
+        visible: _isShow,
+        child: Positioned(
+          bottom: 180,
+          right: 30,
+          child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Tarihe Göre',
+                      style: TextStyle(
+                          color: Constant.text, fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(height: 10),
+                    Text('Fiyata Göre',
+                        style: TextStyle(
+                            color: Constant.text, fontWeight: FontWeight.w500)),
+                    SizedBox(height: 10),
+                    Text('Kampyanlara',
+                        style: TextStyle(
+                            color: Constant.text, fontWeight: FontWeight.w500)),
+                  ])),
+        ));
   }
 
   Container eventsContent(Events eventArray) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.only(top: 250),
       padding: const EdgeInsets.all(10),
       child: Column(
@@ -176,13 +174,17 @@ class _HomeState extends ConsumerState<Home> {
                         const SliverGridDelegateWithMaxCrossAxisExtent(
                             maxCrossAxisExtent: 250,
                             childAspectRatio: .660,
-                            crossAxisSpacing: 20,
+                            crossAxisSpacing: 10,
                             mainAxisSpacing: 20),
                     itemCount: eventArray.events.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetail(eventData: eventArray.events[index])));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EventDetail(
+                                      eventData: eventArray.events[index])));
                         },
                         child: GridCardComponent(
                           event: eventArray.events[index],
@@ -197,7 +199,13 @@ class _HomeState extends ConsumerState<Home> {
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EventDetail(
+                                      eventData: eventArray.events[index])));
+                        },
                         child: ListCardComponent(
                           event: eventArray.events[index],
                         ),
@@ -235,7 +243,10 @@ class _HomeState extends ConsumerState<Home> {
     return Container(
       margin: const EdgeInsets.only(top: 0.0),
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: const Search(hintTitle: "Etkinlik, sanatçı veya mekan arayın",),
+      child: Search(
+        hintTitle: 'Etkinlik, sanatçı veya mekan arayın',
+        onPressed: () {},
+      ),
     );
   }
 

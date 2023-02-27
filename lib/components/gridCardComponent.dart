@@ -10,9 +10,7 @@ class GridCardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
-      
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: Column(
@@ -47,11 +45,11 @@ class GridCardComponent extends StatelessWidget {
                 const SizedBox(width: 5),
                 Flexible(
                     child: Text(
-                      event.location,
-                      style: const TextStyle(fontSize: 11, color: Constant.text),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ))
+                  event.location,
+                  style: const TextStyle(fontSize: 11, color: Constant.text),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                ))
               ],
             ),
           ),
