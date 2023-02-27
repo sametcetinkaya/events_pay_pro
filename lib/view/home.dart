@@ -244,7 +244,7 @@ class _HomeState extends ConsumerState<Home> {
       margin: const EdgeInsets.only(top: 0.0),
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Search(
-        hintTitle: 'Etkinlik, sanatçı veya mekan arayın',
+        hintTitle: 'Etkinlik, sanatçı veya mekan arayınnn',
         onPressed: () {},
       ),
     );
