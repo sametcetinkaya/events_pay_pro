@@ -17,7 +17,7 @@ class DrawerComponent extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-            height: 150,
+            height: 170,
             color: Constant.dark,
             child: SafeArea(
               child: Row(
@@ -25,20 +25,25 @@ class DrawerComponent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 20),
-                    child: SvgPicture.asset(
-                      'images/logo-beyaz.svg',
-                      height: 30,
+                    padding: const EdgeInsets.only(top: 10),
+                    child: const Text(
+                      'Xbilet',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Constant.white,
+                          fontStyle: FontStyle.normal),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.zero,
                     child: IconButton(
-                        onPressed: () {
-                          Scaffold.of(context).closeDrawer();
-                        },
-                        icon:
-                            const Icon(Icons.close_rounded, color: Constant.green),),
+                      onPressed: () {
+                        Scaffold.of(context).closeDrawer();
+                      },
+                      icon: const Icon(Icons.close_rounded,
+                          color: Constant.green),
+                    ),
                   )
                 ],
               ),
@@ -46,7 +51,7 @@ class DrawerComponent extends StatelessWidget {
           ),
           Container(
             height: 105,
-            margin: const EdgeInsets.only(top: 100),
+            margin: const EdgeInsets.only(top: 120),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,

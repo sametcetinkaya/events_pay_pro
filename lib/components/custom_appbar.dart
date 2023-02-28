@@ -17,22 +17,25 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       backgroundColor: Constant.dark,
       centerTitle: true,
-      title: SvgPicture.asset(
-          'images/logo-beyaz.svg',
-          height: 30,
-        ),
+      title: const Text(
+        'Xbilet',
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: Constant.white,
+            fontStyle: FontStyle.normal),
+      ),
       leading: IconButton(
-        icon: const Icon(Icons.menu), onPressed: () { 
+        icon: const Icon(Icons.menu),
+        onPressed: () {
           Scaffold.of(context).openDrawer();
-         },
+        },
       ),
       actions: [
         IconButton(
-          onPressed: () => 
-          Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const LocationView())),
-                           icon: const Icon(Icons.location_on)),
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const LocationView())),
+            icon: const Icon(Icons.location_on)),
       ],
       automaticallyImplyLeading: true,
     );
