@@ -61,7 +61,7 @@ class _HomeState extends ConsumerState<Home> {
     return Visibility(
         visible: _isShow,
         child: Positioned(
-          bottom: 180,
+          top: 315,
           right: 30,
           child: Container(
               decoration: BoxDecoration(
