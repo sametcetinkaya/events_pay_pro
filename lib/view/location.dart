@@ -1,3 +1,4 @@
+import 'package:events_pay_pro/components/search.dart';
 import 'package:events_pay_pro/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,8 +27,8 @@ class _LocationViewState extends ConsumerState<LocationView> {
       backgroundColor: Constant.dark,
       body: Stack(
         children: [
-          searchContent(),
           eventsContent(read.cityArray),
+          searchContent(),
         ],
       ),
     );
@@ -61,9 +62,12 @@ class _LocationViewState extends ConsumerState<LocationView> {
   Container searchContent() {
     return Container(
       decoration: const BoxDecoration(color: Constant.dark),
-      margin: const EdgeInsets.only(top: 30.0),
+      margin: const EdgeInsets.only(top: 60.0),
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      //child: const CitySearch(),
+      child: Search(
+        hintTitle: 'Şehir ara..',
+        onPressed: () {},
+      ),
     );
   }
 }

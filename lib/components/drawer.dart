@@ -99,7 +99,7 @@ class DrawerComponent extends StatelessWidget {
                     onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const LoginView())),
+                            builder: (context) => const RegisterView())),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
