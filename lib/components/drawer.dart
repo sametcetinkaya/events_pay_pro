@@ -16,29 +16,37 @@ class DrawerComponent extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         children: [
           Container(
-            padding: const EdgeInsets.fromLTRB(10, 30, 0, 0),
-            height: 140,
+            padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+            height: 150,
             color: Constant.dark,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SvgPicture.asset(
-                  'images/logo-beyaz.svg',
-                  height: 30,
-                ),
-                IconButton(
-                    onPressed: () {
-                      Scaffold.of(context).closeDrawer();
-                    },
-                    icon:
-                        const Icon(Icons.close_rounded, color: Constant.green))
-              ],
+            child: SafeArea(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 20),
+                    child: SvgPicture.asset(
+                      'images/logo-beyaz.svg',
+                      height: 30,
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.zero,
+                    child: IconButton(
+                        onPressed: () {
+                          Scaffold.of(context).closeDrawer();
+                        },
+                        icon:
+                            const Icon(Icons.close_rounded, color: Constant.green),),
+                  )
+                ],
+              ),
             ),
           ),
           Container(
             height: 105,
-            margin: const EdgeInsets.only(top: 90),
+            margin: const EdgeInsets.only(top: 100),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceAround,

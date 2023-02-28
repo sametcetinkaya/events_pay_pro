@@ -223,19 +223,16 @@ class _HomeState extends ConsumerState<Home> {
         margin: const EdgeInsets.symmetric(vertical: 190.0),
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 50.0,
-        child: SizedBox(
-          height: 75,
-          child: ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(
-              width: 8,
-            ),
-            itemCount: categoryModel.categories.length,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return CategoryComponent(
-                  category: categoryModel.categories[index]);
-            },
+        child: ListView.separated(
+          separatorBuilder: (context, index) => const SizedBox(
+            width: 8,
           ),
+          itemCount: categoryModel.categories.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return CategoryComponent(
+                category: categoryModel.categories[index]);
+          },
         ));
   }
 

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 //import '../components/citySearch.dart';
+import '../components/custom_appbar.dart';
 import '../components/gridCardCityCompanent.dart';
 import '../model/cities.dart';
 import '../riverpod/home_riverpod.dart';
@@ -20,12 +21,11 @@ class LocationView extends ConsumerStatefulWidget {
 class _LocationViewState extends ConsumerState<LocationView> {
   @override
   Widget build(BuildContext context) {
-    var watch = ref.watch(homeriverpod);
     var read = ref.read(homeriverpod);
 
     return Scaffold(
       backgroundColor: Constant.dark,
-      body: Stack(
+      body:Stack(
         children: [
           eventsContent(read.cityArray),
           searchContent(),
@@ -36,33 +36,38 @@ class _LocationViewState extends ConsumerState<LocationView> {
 
   Container eventsContent(Cities cityArray) {
     return Container(
-      margin: const EdgeInsets.only(top: 90),
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.only(top: 65),
       decoration: const BoxDecoration(color: Constant.dark),
       //   margin: const EdgeInsets.only(t),
       padding: const EdgeInsets.all(10),
-      child: Flexible(
-          child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 100,
-                  childAspectRatio: .90,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8),
-              itemCount: cityArray.cities.length,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {},
-                  child: GridCardCityComponent(
-                    city: cityArray.cities[index],
-                  ),
-                );
-              })),
+      child: Column(
+        children: [
+          Flexible(
+              child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 100,
+                      childAspectRatio: .90,
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8),
+                  itemCount: cityArray.cities.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {},
+                      child: GridCardCityComponent(
+                        city: cityArray.cities[index],
+                      ),
+                    );
+                  })),
+        ],
+      ),
     );
   }
 
   Container searchContent() {
     return Container(
       decoration: const BoxDecoration(color: Constant.dark),
-      margin: const EdgeInsets.only(top: 60.0),
+      margin: const EdgeInsets.only(top: 35.0),
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Search(
         hintTitle: 'Şehir ara..',
