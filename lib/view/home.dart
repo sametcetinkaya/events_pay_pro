@@ -61,8 +61,8 @@ class _HomeState extends ConsumerState<Home> {
     return Visibility(
         visible: _isShow,
         child: Positioned(
-          top: 315,
-          right: 30,
+          top: MediaQuery.of(context).size.height*0.17,
+          right: MediaQuery.of(context).size.width*0.03,
           child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),

@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.1
   grock: ^0.1.7
   flutter_riverpod: ^2.2.0
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
