@@ -1,6 +1,6 @@
 # events_pay_pro
 
-A new Flutter project.
+Bu Bilet Clone Aplication.
 
 ## Getting Started
 
@@ -18,6 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 |--|--|
 | <img src="https://github.com/sametcetinkaya/events_pay_pro/blob/main/ScreenShots/Screenshot_20230404_001955.png" width="auto"> | <img src="https://github.com/sametcetinkaya/events_pay_pro/blob/main/ScreenShots/Screenshot_20230404_002014.png" width="auto"> |
 |--|--|
-| <img src="https://github.com/sametcetinkaya/events_pay_pro/blob/main/ScreenShots/Screenshot_20230404_002106.png" width="auto"> | Mutlu |
+| <img src="https://github.com/sametcetinkaya/events_pay_pro/blob/main/ScreenShots/Screenshot_20230404_002106.png" width="auto"> |  |
 
 
