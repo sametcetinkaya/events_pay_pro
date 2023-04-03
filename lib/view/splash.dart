@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grock/grock.dart';
-import '../components/bottomNavigationBar.dart';
-import '../constant/constant.dart';
+import 'package:events_pay_pro/components/bottomNavigationBar.dart';
+import 'package:events_pay_pro/constant/constant.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'home.dart';
@@ -17,10 +17,10 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2), (){
-      Grock.toRemove(const CustomBottomNavigation());
+      Grock.toRemove(const CustomBottomNavigation());});
 
     super.initState();
-  });}
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,8 @@ import 'package:events_pay_pro/view/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import '../view/home.dart';
-import '../view/tickets.dart';
+import 'package:events_pay_pro/view/home.dart';
+import 'package:events_pay_pro/view/tickets.dart';
 
 class CustomBottomNavigation extends StatefulWidget {
   const CustomBottomNavigation({super.key});
