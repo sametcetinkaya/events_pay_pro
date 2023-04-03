@@ -284,26 +284,100 @@ class _ProfileEditViewState extends ConsumerState<ProfileEditView> {
                             fontSize: 12,
                             fontWeight: FontWeight.w600)),
                     SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
                     Container(
-                      color: Constant.greyLight,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Constant.greyLight),
                       child: ToggleButtons(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                         fillColor: Constant.dark,
                         selectedColor: Constant.white,
                         renderBorder: false,
                         color: Constant.dark,
-                        children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: Text('Erkek', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600))),
-                        
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: Text('Kadın', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)))
-                      ], isSelected: _isSelected, 
-                      onPressed: (int newIndex){},),
+                        isSelected: _isSelected,
+                        onPressed: (int index) {
+                          setState(() {
+                            for (int buttonIndex = 0;
+                                buttonIndex < _isSelected.length;
+                                buttonIndex++) {
+                              if (buttonIndex == index) {
+                                _isSelected[buttonIndex] = true;
+                              } else {
+                                _isSelected[buttonIndex] = false;
+                              }
+                            }
+                          });
+                        },
+                        children: const <Widget>[
+                          Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: Text('Erkek',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600))),
+                          Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 15),
+                              child: Text('Kadın',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600)))
+                        ],
+                      ),
                     ),
+                    SizedBox(height: 5,),
+                    const Divider(
+                      height: 15,
+                      thickness: 1,
+                      indent: 0,
+                      endIndent: 0,
+                      color: Constant.gray,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shadowColor: Colors.transparent,
+                              backgroundColor: Constant.dark,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                            ),
+                            child: const Text(
+                              'Güncelle',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shadowColor: Colors.transparent,
+                              backgroundColor: Constant.red,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                            ),
+                            child: const Text(
+                              'Hesabımı Sil',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

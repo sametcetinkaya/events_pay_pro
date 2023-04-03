@@ -3,6 +3,7 @@ import 'package:events_pay_pro/constant/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:grock/grock.dart';
 
+import '../components/bottomNavigationBar.dart';
 import '../components/drawer.dart';
 
 class RegisterView extends StatefulWidget {
@@ -49,7 +50,6 @@ class _RegisterViewState extends State<RegisterView> {
                   color: Constant.white),
               child: Form(
                 key: _key,
-                autovalidateMode: AutovalidateMode.always,
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -61,7 +61,12 @@ class _RegisterViewState extends State<RegisterView> {
                             height: 40,
                             width: 340,
                             child: TextFormField(  
-                              validator: FormFieldValidator().isNotEmpty,
+                              validator: (value){
+                                if(value == null || value.isEmpty){
+                                  return 'Please enter some text';
+                                } 
+                                return null;
+                              },
                               decoration: const InputDecoration(
                                 suffixIcon: Icon(Icons.mail_outline_rounded, color: Constant.gray,size: 28),
                                 hintText: "E-posta Adresini Giriniz",
@@ -90,8 +95,11 @@ class _RegisterViewState extends State<RegisterView> {
                             height: 40,
                             width: 340,
                             child: TextFormField(  
-                                validator: (value) {
-                                return (value?.isNotEmpty ?? false) ? null : 'Bu alan boş bırakılamaz';
+                                validator:  (value){
+                                if(value == null || value.isEmpty){
+                                  return 'Please enter some text';
+                                } 
+                                return null;
                               },
                               obscureText: true,
                               enableSuggestions: false,

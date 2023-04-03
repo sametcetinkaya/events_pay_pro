@@ -4,6 +4,7 @@ import 'package:events_pay_pro/view/account.dart';
 import 'package:events_pay_pro/view/register.dart';
 import 'package:flutter/material.dart';
 
+import '../components/bottomNavigationBar.dart';
 import '../components/drawer.dart';
 
 class LoginView extends StatelessWidget {

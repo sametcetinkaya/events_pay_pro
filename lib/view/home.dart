@@ -1,5 +1,6 @@
 // ignore_for_file: unused_local_variable
 
+import 'package:events_pay_pro/components/bottomNavigationBar.dart';
 import 'package:events_pay_pro/components/gridCardComponent.dart';
 import 'package:events_pay_pro/components/listCardComponent.dart';
 import 'package:events_pay_pro/model/events.dart';
