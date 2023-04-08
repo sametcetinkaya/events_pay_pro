@@ -8,6 +8,7 @@ import 'constant/constant.dart';
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -15,13 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Bu Bilet',
+        title: 'Xbilet',
         navigatorKey: Grock.navigationKey,
         theme: ThemeData(
-          scaffoldBackgroundColor: Constant.body,
-          primarySwatch: Colors.blue,
-          fontFamily: 'Montserrat'
-        ),
+            scaffoldBackgroundColor: Constant.body,
+            primarySwatch: Colors.blue,
+            fontFamily: 'Montserrat'),
         home: const Splash());
   }
 }

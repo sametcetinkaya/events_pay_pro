@@ -24,12 +24,11 @@ class CategoryComponent extends StatelessWidget {
                   width: 30,
                   height: 30,
                   fit: BoxFit.cover,
-                )
-              ),
+                )),
             Text(
               category.name.toUpperCase(),
               style: const TextStyle(
-                  color: Constant.green,
+                  color: Constant.dark,
                   fontWeight: FontWeight.bold,
                   fontSize: 11),
             )

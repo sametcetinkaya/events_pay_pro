@@ -5,6 +5,7 @@ import 'package:events_pay_pro/view/login.dart';
 import 'package:events_pay_pro/view/profile_edit.dart';
 import 'package:events_pay_pro/view/register.dart';
 import 'package:events_pay_pro/view/settings.dart';
+import 'package:events_pay_pro/view/ticketSettings.dart';
 import 'package:events_pay_pro/view/tickets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,7 +25,7 @@ class _AccountViewState extends State<AccountView> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 2,
         child: Scaffold(
           key: _scaffoldKey,
           drawer: const DrawerComponent(),
@@ -54,10 +55,6 @@ class _AccountViewState extends State<AccountView> {
                 indicatorColor: Constant.white,
                 tabs: [
                   Tab(
-                    icon: Icon(Icons.person_pin_outlined),
-                    text: 'Düzenle',
-                  ),
-                  Tab(
                     icon: Icon(Icons.shopping_basket_outlined),
                     text: 'Biletlerim',
                   ),
@@ -68,9 +65,8 @@ class _AccountViewState extends State<AccountView> {
                 ]),
           ),
           body: TabBarView(children: [
-            ProfileEditView(),
             TicketsView(),
-            SettingsView(),
+            TicketSettingsView(),
           ]),
         ));
   }

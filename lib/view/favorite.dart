@@ -1,25 +1,28 @@
 import 'package:flutter/material.dart';
-
 import '../components/custom_appbar.dart';
 import '../components/drawer.dart';
 import '../constant/constant.dart';
 
-class TicketsView extends StatelessWidget {
-  const TicketsView({super.key});
+class FavoriteView extends StatelessWidget {
+  const FavoriteView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Constant.body,
+        drawer: const DrawerComponent(),
+        appBar: CustomAppBar(),
         body: Column(
           children: [
-            SizedBox(height: 10),
+            const SizedBox(
+              height: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  "Kayıtlı Bilet Bulunamadı.",
+                  "Kayıtlı Favori Bulunamadı",
                   style: TextStyle(fontSize: 16),
                 )
               ],

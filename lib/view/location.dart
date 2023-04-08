@@ -25,7 +25,7 @@ class _LocationViewState extends ConsumerState<LocationView> {
 
     return Scaffold(
       backgroundColor: Constant.dark,
-      body:Stack(
+      body: Stack(
         children: [
           eventsContent(read.cityArray),
           searchContent(),
@@ -67,8 +67,8 @@ class _LocationViewState extends ConsumerState<LocationView> {
   Container searchContent() {
     return Container(
       decoration: const BoxDecoration(color: Constant.dark),
-      margin: const EdgeInsets.only(top: 35.0),
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.only(top: 60.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Search(
         hintTitle: 'Şehir ara..',
         onPressed: () {},

@@ -36,13 +36,13 @@ class _ProfileEditViewState extends ConsumerState<ProfileEditView> {
     return Scaffold(
       backgroundColor: Constant.body,
       body: SingleChildScrollView(
-        reverse: true,
+        reverse: false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.only(left: 15),
+              margin: const EdgeInsets.only(left: 15),
               child: const Text(
                 "Profilini Düzenle",
                 style: TextStyle(
@@ -326,7 +326,9 @@ class _ProfileEditViewState extends ConsumerState<ProfileEditView> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(
+                      height: 5,
+                    ),
                     const Divider(
                       height: 15,
                       thickness: 1,

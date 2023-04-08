@@ -19,34 +19,32 @@ class DrawerComponent extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
             height: 170,
             color: Constant.dark,
-            child: SafeArea(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: const Text(
-                      'Xbilet',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          color: Constant.white,
-                          fontStyle: FontStyle.normal),
-                    ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 50),
+                  child: const Text(
+                    'Xbilet',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Constant.white,
+                        fontStyle: FontStyle.normal),
                   ),
-                  Container(
-                    padding: EdgeInsets.zero,
-                    child: IconButton(
-                      onPressed: () {
-                        Scaffold.of(context).closeDrawer();
-                      },
-                      icon: const Icon(Icons.close_rounded,
-                          color: Constant.green),
-                    ),
-                  )
-                ],
-              ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 42),
+                  child: IconButton(
+                    onPressed: () {
+                      Scaffold.of(context).closeDrawer();
+                    },
+                    icon:
+                        const Icon(Icons.close_rounded, color: Constant.green),
+                  ),
+                )
+              ],
             ),
           ),
           Container(

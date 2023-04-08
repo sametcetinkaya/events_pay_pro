@@ -34,9 +34,6 @@ class _HomeState extends ConsumerState<Home> {
   String filter = '';
   @override
   Widget build(BuildContext context) {
-    final List<Map> myProducts =
-        List.generate(1000, (index) => {"id": index, "name": 'product $index'})
-            .toList();
     var watch = ref.watch(homeriverpod);
     var read = ref.read(homeriverpod);
     return Scaffold(
@@ -62,8 +59,8 @@ class _HomeState extends ConsumerState<Home> {
     return Visibility(
         visible: _isShow,
         child: Positioned(
-          top: MediaQuery.of(context).size.height*0.17,
-          right: MediaQuery.of(context).size.width*0.03,
+          top: MediaQuery.of(context).size.height * 0.17,
+          right: MediaQuery.of(context).size.width * 0.03,
           child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
@@ -94,7 +91,7 @@ class _HomeState extends ConsumerState<Home> {
   Container eventsContent(Events eventArray) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      margin: const EdgeInsets.only(top: 250),
+      margin: const EdgeInsets.only(top: 270),
       padding: const EdgeInsets.all(10),
       child: Column(
         children: [
@@ -221,7 +218,7 @@ class _HomeState extends ConsumerState<Home> {
 
   Container categoryContent(CategoriesModel categoryModel) {
     return Container(
-        margin: const EdgeInsets.symmetric(vertical: 190.0),
+        margin: const EdgeInsets.symmetric(vertical: 220.0),
         padding: const EdgeInsets.symmetric(horizontal: 10),
         height: 50.0,
         child: ListView.separated(
@@ -231,8 +228,7 @@ class _HomeState extends ConsumerState<Home> {
           itemCount: categoryModel.categories.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return CategoryComponent(
-                category: categoryModel.categories[index]);
+            return CategoryComponent(category: categoryModel.categories[index]);
           },
         ));
   }
@@ -242,7 +238,7 @@ class _HomeState extends ConsumerState<Home> {
       margin: const EdgeInsets.only(top: 0.0),
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Search(
-        hintTitle: 'Etkinlik, sanatçı veya mekan arayın',
+        hintTitle: 'Ara..',
         onPressed: () {},
       ),
     );
@@ -250,9 +246,11 @@ class _HomeState extends ConsumerState<Home> {
 
   Container sliderContent() {
     return Container(
-      height: 180,
+      width: double.infinity,
+      height: 210,
       margin: const EdgeInsets.only(top: 34.0),
-      child: Image.asset('images/slider.jpg', fit: BoxFit.cover),
+      child: Image.asset('images/buyuk-ev-ablukada-akustik-konseri-49150.png',
+          fit: BoxFit.cover),
     );
   }
 }
